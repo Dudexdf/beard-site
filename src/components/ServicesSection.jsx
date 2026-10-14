@@ -8,7 +8,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 px-4">
+    <section id="services" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4">
           Наши услуги

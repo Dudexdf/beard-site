@@ -8,7 +8,7 @@ const masters = [
 
 export default function MastersSection() {
   return (
-    <section className="py-20 px-4 bg-surface/30">
+    <section id="masters" className="py-20 px-4 bg-surface/30">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4">
           Наши мастера

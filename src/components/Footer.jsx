@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-white/10 py-10 px-4">
+    <footer className="bg-surface border-t border-white/10 py-10 px-4 mt-auto">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
         <div>
           <div className="font-heading text-xl text-accent mb-3">BEARD</div>
@@ -12,10 +14,10 @@ export default function Footer() {
         <div>
           <div className="font-semibold mb-3">Навигация</div>
           <ul className="text-text-muted text-sm space-y-2">
-            <li><a href="/services" className="hover:text-accent transition">Услуги</a></li>
-            <li><a href="/masters" className="hover:text-accent transition">Мастера</a></li>
-            <li><a href="/about" className="hover:text-accent transition">О нас</a></li>
-            <li><a href="/contacts" className="hover:text-accent transition">Контакты</a></li>
+            <li><Link to="/services" className="hover:text-accent transition">Услуги</Link></li>
+            <li><Link to="/masters" className="hover:text-accent transition">Мастера</Link></li>
+            <li><Link to="/booking" className="hover:text-accent transition">Запись</Link></li>
+            <li><Link to="/account" className="hover:text-accent transition">Личный кабинет</Link></li>
           </ul>
         </div>
 
