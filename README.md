@@ -1,16 +1,29 @@
-# React + Vite
+# Beard (Бирд) — онлайн-запись в барбершоп
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+«Разработка дизайна веб-приложений»  
+МДК.08.02 Графический дизайн и мультимедиа
 
-Currently, two official plugins are available:
+## О проекте
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Beard** — веб-приложение для онлайн-записи в барбершоп. Запись за 3 шага: услуга → мастер → свободный слот. Есть личный кабинет клиента и админ-панель.
 
-## React Compiler
+## Стек технологий
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React + Vite
+- **Стили:** Tailwind CSS v4
+- **Шрифты:** Oswald (заголовки) + Inter (текст)
+- **Хостинг:** Vercel
 
-## Expanding the ESLint configuration
+## Ссылки
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Сайт:** https://beard-site.vercel.app
+- **Репозиторий (код):** https://github.com/Dudexdf/beard-site
+- **Репозиторий (документы):** https://github.com/Dudexdf/Beard
+
+## Запуск локально
+
+```bash
+git clone https://github.com/Dudexdf/beard-site.git
+cd beard-site
+npm install
+npm run dev
