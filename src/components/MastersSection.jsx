@@ -1,12 +1,23 @@
+import { useEffect, useState } from 'react';
 import MasterCard from './MasterCard';
-
-const masters = [
-  { name: 'Александр', specialization: 'Классические стрижки', rating: 4.9 },
-  { name: 'Максим', specialization: 'Фейды и современные стрижки', rating: 5.0 },
-  { name: 'Игорь', specialization: 'Борода и бритьё', rating: 4.8 },
-];
+import { supabase } from '../lib/supabase';
 
 export default function MastersSection() {
+  const [masters, setMasters] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase
+      .from('Master')
+      .select('*')
+      .limit(3)
+      .then(({ data, error }) => {
+        if (error) console.error(error);
+        else setMasters(data);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <section id="masters" className="py-20 px-4 bg-surface/30">
       <div className="max-w-7xl mx-auto">
@@ -17,11 +28,20 @@ export default function MastersSection() {
           Опытные барберы с многолетним стажем
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {masters.map((m) => (
-            <MasterCard key={m.name} {...m} />
-          ))}
-        </div>
+        {loading ? (
+          <p className="text-center text-text-muted">Загрузка…</p>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-6">
+            {masters.map((m) => (
+              <MasterCard
+                key={m.id}
+                name={m.name}
+                specialization={m.specialization}
+                rating={m.rating}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
