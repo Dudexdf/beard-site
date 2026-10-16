@@ -1,7 +1,10 @@
+import { IMAGES } from '../data/images';
+
 export default function Hero() {
   return (
     <section className="pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        {/* Левая колонка — текст */}
         <div>
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Стрижка, которая <span className="text-accent">говорит за тебя</span>
@@ -17,7 +20,14 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="aspect-square rounded-2xl bg-gradient-to-br from-surface to-bg border border-white/10"></div>
+        {/* Правая колонка — фото */}
+        <div className="aspect-square rounded-2xl overflow-hidden border border-white/10">
+          <img
+            src={IMAGES.hero}
+            alt="Барбер за работой"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </section>
   );

@@ -33,3 +33,10 @@ body {
     transition: none !important;
   }
 }
+button, a {
+  transition: all 0.2s ease-out;
+}
+
+button:active, a:active {
+  transform: scale(0.97);
+}

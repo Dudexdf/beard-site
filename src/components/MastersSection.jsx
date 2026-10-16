@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import MasterCard from './MasterCard';
 import { supabase } from '../lib/supabase';
+import FadeIn from './FadeIn';
+import Skeleton from './Skeleton';
+import { IMAGES } from '../data/images';
 
 export default function MastersSection() {
   const [masters, setMasters] = useState([]);
@@ -20,6 +23,7 @@ export default function MastersSection() {
 
   return (
     <section id="masters" className="py-20 px-4 bg-surface/30">
+      <FadeIn>
       <div className="max-w-7xl mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4">
           Наши мастера
@@ -28,21 +32,27 @@ export default function MastersSection() {
           Опытные барберы с многолетним стажем
         </p>
 
-        {loading ? (
-          <p className="text-center text-text-muted">Загрузка…</p>
-        ) : (
+          {loading ? (
+  <div className="grid md:grid-cols-3 gap-6">
+    {[1, 2, 3].map((i) => (
+      <Skeleton key={i} className="h-72" />
+    ))}
+  </div>
+) : (
           <div className="grid md:grid-cols-3 gap-6">
             {masters.map((m) => (
               <MasterCard
-                key={m.id}
-                name={m.name}
-                specialization={m.specialization}
-                rating={m.rating}
-              />
+  key={m.id}
+  name={m.name}
+  specialization={m.specialization}
+  rating={m.rating}
+  image={IMAGES[`master${m.id}`] || IMAGES.master1}
+/>
             ))}
           </div>
         )}
       </div>
+      </FadeIn>
     </section>
   );
 }

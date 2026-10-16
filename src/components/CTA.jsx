@@ -1,6 +1,8 @@
+import FadeIn from './FadeIn';
 export default function CTA() {
   return (
     <section className="bg-accent py-16 px-4">
+      <FadeIn>
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-bg mb-4">
           Готовы к новому образу?
@@ -15,6 +17,7 @@ export default function CTA() {
           Записаться онлайн
         </a>
       </div>
+      </FadeIn>
     </section>
   );
 }
